@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Projects`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://sebromero.github.io/`
   },
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
