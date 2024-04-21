@@ -1,10 +1,7 @@
-import Preview from "@/components/preview";
-import React from "react";
+import HomePage from "@/app/home/page";
+
 export const metadata = {
-  title: "Preview || Tokyo - Personal Portfolio React Nextjs Template",
-};
-const MainRoot = () => {
-  return <Preview />;
+  title: "Sebastian Romero || Interaction Designer & Creative Technologist",
 };
 
-export default MainRoot;
+export default HomePage;
