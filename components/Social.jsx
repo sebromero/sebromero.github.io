@@ -16,7 +16,7 @@ const Social = () => {
       <ul className="social">
         {SocialShare.map((val, i) => (
           <li key={i}>
-            <a href={`${val.link}`} target="_blank" rel="noreferrer">
+            <a href={`${val.link}`} rel="noreferrer">
               <img
                 className="svg"
                 src={`/img/svg/social/${val.iconName}.svg`}
