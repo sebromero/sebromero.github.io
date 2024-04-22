@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import newsData from "../../data/newsData";
 import ShareSocial from "../social-share/ShareSocial";
+import DetailsCard from "@/components/cards/DetailsCard";
 
 // Modal.setAppElement("#__next");
 
@@ -26,35 +27,7 @@ const News = () => {
       <ul>
         {newsData.map((item) => (
           <li key={item.id}>
-            <div className="list_inner" onClick={() => handleModle(item?.id)}>
-              <div className="image">
-                <div
-                  className="main "
-                  style={{
-                    backgroundImage: `url(${item.img})`,
-                  }}
-                ></div>
-              </div>
-              {/* END IMAGE */}
-              <div className="details">
-                <div className="extra">
-                  <p className="date">
-                    By <a href="#">{item.poster}</a>
-                    <span>{item.date}</span>
-                  </p>
-                </div>
-                {/* END EXTRA */}
-
-                <h3 className="title">{item.title}</h3>
-                <div className="tokyo_tm_read_more">
-                  <div className="read-more">
-                    <span>Read More</span>
-                  </div>
-                </div>
-                {/* END READ MORE BUTTON */}
-              </div>
-              {/* END DETAILS */}
-            </div>
+            <DetailsCard title={item.title} subtitle={`${item.poster} ${item.date}`} image={item.img} onClick={() => handleModle(item?.id)} showReadMore={true} />
           </li>
         ))}
 
