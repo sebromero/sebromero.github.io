@@ -11,6 +11,7 @@ import Image from "next/image";
 import ModalOne from "./modal/ModalOne";
 import ModalTwo from "./modal/ModalTwo";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import ImageCard from "@/components/cards/ImageCard";
 // Modal.setAppElement("#__next");
 
 const Portfolio = () => {
@@ -54,63 +55,12 @@ const Portfolio = () => {
                 data-aos-duration="1200"
               >
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/5.jpg"
-                        alt="Vimeo"
-                        data-tip
-                        data-for="vimeo"
-                        data-tooltip-id={"vimeo"}
-                        onClick={() => setOpenVimeo(true)}
-                      />
-
-                      <ReactTooltip
-                        id="vimeo"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Teresa Butler</h5>
-                            <span>Vimeo</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} />
                 </li>
                 {/* END VIMEO */}
 
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/2.jpg"
-                        alt="Youtube"
-                        data-tip
-                        data-for="youtube"
-                        data-tooltip-id={"youtube"}
-                        onClick={() => setOpenYoutube(true)}
-                      />
-                      <ReactTooltip
-                        id="youtube"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Ashely Flores</h5>
-                            <span>Youtube</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/2.jpg" title="Ashely Flores" subtitle="Youtube" id="youtube" onClick={() => setOpenYoutube(true)} />
                 </li>
                 {/* END YOUTUBE */}
 
@@ -199,64 +149,12 @@ const Portfolio = () => {
                 {/* END SHOT */}
 
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/6.jpg"
-                        alt="Details"
-                        data-tip
-                        data-for="detail"
-                        data-tooltip-id={"detail"}
-                        onClick={toggleModalOne}
-                      />
-
-                      <ReactTooltip
-                        id="detail"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Selena Gomez</h5>
-                            <span>Details</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/6.jpg" title="Selena Gomez" subtitle="Details" id="detail" onClick={toggleModalOne} />
                 </li>
                 {/* END DETAILS */}
 
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/7.jpg"
-                        alt="Details"
-                        data-tip
-                        data-for="detail2"
-                        data-tooltip-id={"detail2"}
-                        onClick={toggleModalTwo}
-                      />
-
-                      <ReactTooltip
-                        id="detail2"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Ave Simone</h5>
-                            <span>Details</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/7.jpg" title="Ave Simone" subtitle="Details" id="detail2" onClick={toggleModalTwo} />
                 </li>
                 {/* END DETAILS */}
               </ul>
@@ -271,61 +169,11 @@ const Portfolio = () => {
                 data-aos-duration="1200"
               >
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/5.jpg"
-                        alt="Vimeo"
-                        data-tip
-                        data-for="vimeo2"
-                        data-tooltip-id={"vimeo2"}
-                        onClick={() => setOpenVimeo(true)}
-                      />
-                      <ReactTooltip
-                        id="vimeo2"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Teresa Butler</h5>
-                            <span>Vimeo</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} />
                 </li>
                 {/* END VIMEO */}
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/2.jpg"
-                        alt="Youtube"
-                        data-tip
-                        data-for="youtube2"
-                        data-tooltip-id={"youtube2"}
-                        onClick={() => setOpenYoutube(true)}
-                      />
-                      <ReactTooltip
-                        id="youtube2"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Ashely Flores</h5>
-                            <span>Youtube</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/2.jpg" title="Ashely Flores" subtitle="Youtube" id="youtube" onClick={() => setOpenYoutube(true)} />
                 </li>
                 {/* END YOUTUBE */}
               </ul>
@@ -435,63 +283,11 @@ const Portfolio = () => {
                 data-aos-duration="1200"
               >
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/6.jpg"
-                        alt="Details"
-                        data-tip
-                        data-for="detail4"
-                        data-tooltip-id={"detail4"}
-                        onClick={toggleModalOne}
-                      />
-
-                      <ReactTooltip
-                        id="detail4"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Selena Gomez</h5>
-                            <span>Details</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/6.jpg" title="Selena Gomez" subtitle="Details" id="detail" onClick={toggleModalOne} />
                 </li>
                 {/* END DETAILS */}
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Image
-                        width={300}
-                        height={300}
-                        src="/img/portfolio/7.jpg"
-                        alt="Details"
-                        data-tip
-                        data-for="detail5"
-                        data-tooltip-id={"detail5"}
-                        onClick={toggleModalTwo}
-                      />
-
-                      <ReactTooltip
-                        id="detail5"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Ave Simone</h5>
-                            <span>Details</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <ImageCard width={300} height={300} image="/img/portfolio/7.jpg" title="Ave Simone" subtitle="Details" id="detail2" onClick={toggleModalTwo} />
                 </li>
                 {/* END DETAILS */}
               </ul>
