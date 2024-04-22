@@ -1089,7 +1089,7 @@ ul.react-tabs__tab-list {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 12px;
-  font-family: montserrat;
+  font-family: var(--font-montserrat);
   cursor: pointer;
 }
 .tokyo_tm_read_more .read-more:before {
