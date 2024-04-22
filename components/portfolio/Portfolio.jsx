@@ -1,17 +1,16 @@
 "use client";
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Gallery, Item } from "react-photoswipe-gallery";
+import { Gallery } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import "react-tooltip/dist/react-tooltip.css";
 import ModalVideo from "react-modal-video";
 import Modal from "react-modal";
 
-import Image from "next/image";
 import ModalOne from "./modal/ModalOne";
 import ModalTwo from "./modal/ModalTwo";
-import { Tooltip as ReactTooltip } from "react-tooltip";
 import ImageCard from "@/components/cards/ImageCard";
+import GalleryImageCard from "@/components/cards/GalleryImageCard";
 // Modal.setAppElement("#__next");
 
 const Portfolio = () => {
@@ -65,86 +64,12 @@ const Portfolio = () => {
                 {/* END YOUTUBE */}
 
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Item
-                        original="/img/portfolio/4.jpg"
-                        thumbnail="/img/portfolio/4.jpg"
-                        width={500}
-                        height={550}
-                      >
-                        {({ ref, open }) => (
-                          <Image
-                            width={300}
-                            height={300}
-                            srl_gallery_image="true"
-                            src="/img/portfolio/4.jpg"
-                            alt="Childhood"
-                            data-tip
-                            data-for="shot"
-                            data-tooltip-id={"shot"}
-                            role="button"
-                            ref={ref}
-                            onClick={open}
-                          />
-                        )}
-                      </Item>
-                      <ReactTooltip
-                        id="shot"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Derek Smith</h5>
-                            <span>Shot</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/4.jpg" image="/img/portfolio/4.jpg" title="Derek Smith" subtitle="Shot" id="shot" />
                 </li>
                 {/* END SHOT */}
 
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Item
-                        original="/img/portfolio/3.jpg"
-                        thumbnail="/img/portfolio/3.jpg"
-                        width={500}
-                        height={550}
-                      >
-                        {({ ref, open }) => (
-                          <Image
-                            width={300}
-                            height={300}
-                            srl_gallery_image="true"
-                            src="/img/portfolio/3.jpg"
-                            alt="Childhood"
-                            data-tip
-                            data-for="shot2"
-                            data-tooltip-id={"shot2"}
-                            role="button"
-                            ref={ref}
-                            onClick={open}
-                          />
-                        )}
-                      </Item>
-                      <ReactTooltip
-                        id="shot2"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Gloria jenkins</h5>
-                            <span>Shot</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/3.jpg" image="/img/portfolio/3.jpg" title="Gloria Jenkins" subtitle="Shot" id="shot2" />
                 </li>
                 {/* END SHOT */}
 
@@ -189,85 +114,11 @@ const Portfolio = () => {
                 data-aos-duration="1200"
               >
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Item
-                        original="/img/portfolio/4.jpg"
-                        thumbnail="/img/portfolio/4.jpg"
-                        width={500}
-                        height={550}
-                      >
-                        {({ ref, open }) => (
-                          <Image
-                            width={300}
-                            height={300}
-                            srl_gallery_image="true"
-                            src="/img/portfolio/4.jpg"
-                            alt="Childhood"
-                            data-tip
-                            data-for="shot2"
-                            role="button"
-                            data-tooltip-id={"shot2"}
-                            ref={ref}
-                            onClick={open}
-                          />
-                        )}
-                      </Item>
-                      <ReactTooltip
-                        id="shot2"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Derek Smith</h5>
-                            <span>Shot</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/4.jpg" image="/img/portfolio/4.jpg" title="Derek Smith" subtitle="Shot" id="shot" />
                 </li>
                 {/* END SHOT */}
                 <li>
-                  <div className="inner">
-                    <div className="entry tokyo_tm_portfolio_animation_wrap">
-                      <Item
-                        original="/img/portfolio/3.jpg"
-                        thumbnail="/img/portfolio/3.jpg"
-                        width={500}
-                        height={550}
-                      >
-                        {({ ref, open }) => (
-                          <Image
-                            width={300}
-                            height={300}
-                            srl_gallery_image="true"
-                            src="/img/portfolio/3.jpg"
-                            alt="Childhood"
-                            data-tip
-                            data-for="shot3"
-                            role="button"
-                            data-tooltip-id={"shot3"}
-                            ref={ref}
-                            onClick={open}
-                          />
-                        )}
-                      </Item>
-                      <ReactTooltip
-                        id="shot3"
-                        place="bottom"
-                        variant="light"
-                        float
-                        render={() => (
-                          <div className="tooltip-wrapper">
-                            <h5>Gloria jenkins</h5>
-                            <span>Shot</span>
-                          </div>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/3.jpg" image="/img/portfolio/3.jpg" title="Gloria Jenkins" subtitle="Shot" id="shot2" />
                 </li>
                 {/* END SHOT */}
               </ul>
