@@ -1007,7 +1007,8 @@ ul.react-tabs__tab-list {
     margin: 0px 0px 40px 0px;
   }
 }
-.tokyo_tm_news ul li .list_inner {
+
+.details-card {
   width: 100%;
   height: auto;
   clear: both;
@@ -1017,17 +1018,17 @@ ul.react-tabs__tab-list {
   box-shadow: 0 0 20px #dfdfdf;
   cursor: pointer;
 }
-.tokyo_tm_news ul li .image {
+.details-card .image {
   position: relative;
   overflow: hidden;
   cursor: pointer;
   min-height: 260px;
 }
-.tokyo_tm_news ul li .image img {
+.details-card .image img {
   min-width: 100%;
   opacity: 0;
 }
-.tokyo_tm_news ul li .image .main {
+.details-card .image .main {
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -1038,10 +1039,10 @@ ul.react-tabs__tab-list {
   background-position: center;
   transition: all 0.3s ease-in-out;
 }
-.tokyo_tm_news ul li .list_inner:hover .main {
+.details-card:hover .main {
   transform: scale(1.1) translateZ(0);
 }
-.tokyo_tm_news ul li .details {
+.details-card .details {
   width: 100%;
   float: left;
   padding: 25px 40px 20px;
@@ -1050,7 +1051,7 @@ ul.react-tabs__tab-list {
     padding: 30px 25px 25px;
   }
 }
-.tokyo_tm_news ul li .details .title {
+.details-card .details .title {
   position: relative;
   margin-bottom: 10px;
   text-decoration: none;
@@ -1061,7 +1062,7 @@ ul.react-tabs__tab-list {
   display: inline-block;
   cursor: pointer;
 }
-.tokyo_tm_news ul li .extra {
+.details-card .extra {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1120,10 +1121,10 @@ ul.react-tabs__tab-list {
     transform: translateX(0%);
   }
 }
-.tokyo_tm_news ul li .details .title:hover {
+.details-card .details .title:hover {
   color: #000;
 }
-.tokyo_tm_news ul li .list_inner .tokyo_tm_read_more .read-more:before {
+.details-card .tokyo_tm_read_more .read-more:before {
   @media screen and (max-width: 767px) {
     animation: read-more-anim-2;
     animation-fill-mode: forwards;
@@ -1131,7 +1132,7 @@ ul.react-tabs__tab-list {
     animation-timing-function: cubic-bezier(0.6, 0.01, 0, 1);
   }
 }
-.tokyo_tm_news ul li .list_inner:hover .tokyo_tm_read_more .read-more:before {
+.details-card:hover .tokyo_tm_read_more .read-more:before {
   animation: read-more-anim-2;
   animation-fill-mode: forwards;
   animation-duration: 0.4s;
@@ -1155,30 +1156,30 @@ ul.react-tabs__tab-list {
     transform: scaleX(0.2);
   }
 }
-.tokyo_tm_news ul li .details .date {
+.details-card .details .date {
   text-transform: capitalize;
   font-family: var(--font-montserrat);
   font-size: 13px;
   color: #767676;
   font-style: italic;
 }
-.tokyo_tm_news ul li .list_inner:hover .tokyo_tm_read_more .read-more span,
+.details-card:hover .tokyo_tm_read_more .read-more span,
 .tokyo_tm_services ul li .list_inner:hover .tokyo_tm_read_more .read-more span {
   transform: translateX(0%);
 }
-.tokyo_tm_news ul li .details .date a {
+.details-card .details .date a {
   text-decoration: none;
   color: #767676;
   transition: all 0.3s ease;
 }
-.tokyo_tm_news ul li .details .date a:hover {
+.details-card .details .date a:hover {
   color: #000;
 }
-.tokyo_tm_news ul li .details .date span {
+.details-card .details .date span {
   position: relative;
   margin-left: 11px;
 }
-.tokyo_tm_news ul li .details .date span:before {
+.details-card .details .date span:before {
   position: absolute;
   content: "";
   margin-top: 1px;

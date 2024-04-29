@@ -1,6 +1,6 @@
 const DetailsCard = (props) => {
     return (
-        <div className="list_inner" onClick={props.onClick}>
+        <div className="details-card" onClick={props.onClick}>
             <div className="image">
                 <div
                     className="main "
