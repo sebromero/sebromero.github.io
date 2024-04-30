@@ -11,16 +11,17 @@ const DetailsCard = (props) => {
             </div>
             {/* END IMAGE */}
             <div className="details">
+                <h3 className="title">{props.title}</h3>
+                {/* END TITLE */}
+                
                 <div className="extra">
                     <p className="date">
-                    By <a href="#">{props.subtitle}</a>
-                    <span>{props.date}</span>
+                        <a href="#">{props.subtitle}</a>
+                        <span>{props.date}</span>
                     </p>
                 </div>
                 {/* END EXTRA */}
 
-                <h3 className="title">{props.title}</h3>
-                {/* END TITLE */}
 
                 {/* START READ MORE BUTTON */} 
                 { props.showReadMore &&    
