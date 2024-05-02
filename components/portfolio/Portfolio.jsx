@@ -11,6 +11,7 @@ import ModalOne from "./modal/ModalOne";
 import ModalTwo from "./modal/ModalTwo";
 import ImageCard from "@/components/cards/ImageCard";
 import GalleryImageCard from "@/components/cards/GalleryImageCard";
+import DetailsCard from "@/components/cards/DetailsCard";
 // Modal.setAppElement("#__next");
 
 const Portfolio = () => {
@@ -53,6 +54,9 @@ const Portfolio = () => {
                 data-aos="fade-right"
                 data-aos-duration="1200"
               >
+                <li>
+                  <DetailsCard title="AI Insect Trap" subtitle="How to implement a smart, LoRa-connected insect trap with Arduino." date="2024" href="/projects/ai-insect-trap" image="/projects/AI-Insect-Trap/pictures/open-mv.png" />
+                </li>
                 <li>
                   <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} />
                 </li>
