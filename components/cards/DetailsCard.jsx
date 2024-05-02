@@ -16,7 +16,7 @@ const DetailsCard = (props) => {
                 
                 <div className="extra">
                     <p className="date">
-                        <a href="#">{props.subtitle}</a>
+                        {props.subtitle}
                         <span>{props.date}</span>
                     </p>
                 </div>

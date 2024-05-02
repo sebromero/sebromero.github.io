@@ -31,13 +31,14 @@
     color: #bbb;
 }
 
-.dark .details-card .details .date a:hover {
-    color: #fff;
-}
+// TODO: Remove this block when the website is ready
+// .dark .details-card .details .date a:hover {
+//     color: #fff;
+// }
 
-.dark .details-card .details .date a {
-    color: #bbb;
-}
+// .dark .details-card .details .date a {
+//     color: #bbb;
+// }
 
 .details-card {
     width: 100%;
@@ -164,15 +165,16 @@
     transform: translateX(0%);
 }
 
-.details-card .details .date a {
-    text-decoration: none;
-    color: #767676;
-    transition: all 0.3s ease;
-}
+// TODO: Remove this block when the website is ready
+// .details-card .details .date a {
+//     text-decoration: none;
+//     color: #767676;
+//     transition: all 0.3s ease;
+// }
 
-.details-card .details .date a:hover {
-    color: #000;
-}
+// .details-card .details .date a:hover {
+//     color: #000;
+// }
 
 .details-card .details .date span {
     position: relative;
