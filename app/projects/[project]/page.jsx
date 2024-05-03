@@ -4,7 +4,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 export const metadata = {
   title: "About || Tokyo - Personal Portfolio React Nextjs Template",
 };
-const index = () => {
+const index = ({ params }) => {
   return (
     <>
       {/* End page title for seo */}
@@ -16,8 +16,9 @@ const index = () => {
       <div className="rightpart">
         <div className="rightpart_in">
           <div className="tokyo_tm_section">
-            <div data-aos="fade-right" data-aos-duration="1200">
-              <About />
+            <div data-aos="fade-right" data-aos-duration="1200">            
+              <p>Project: {params.project}</p>
+              {/* <About /> */}
             </div>
           </div>
         </div>
