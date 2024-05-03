@@ -12,7 +12,7 @@ const NotFound = () => {
       <div className="not-found-wrapper">
         <div className="leftpart">
           <div className="leftpart_inner">
-            <div className="logo">
+            {/* <div className="logo">
               <Link className="navbar-brand" href="/">
                 <Image
                   width={126}
@@ -21,7 +21,7 @@ const NotFound = () => {
                   alt="brand"
                 />
               </Link>
-            </div>
+            </div> */}
             {/* END LOGO */}
             <div className="copyright">
               <p>
