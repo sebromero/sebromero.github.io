@@ -12,7 +12,6 @@ import { ThemeProvider } from "next-themes";
 import ThemeSwitch from "@/components/switch/ThemeSwitch";
 
 import { Mulish, Montserrat, Poppins } from "next/font/google";
-import { usePathname } from "next/navigation";
 
 const MulishFonts = Mulish({
   subsets: ["latin"],
@@ -37,7 +36,6 @@ const PoppinsFonts = Poppins({
 });
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
   useEffect(() => {
     Aos.init({
       duration: 1200,
@@ -51,7 +49,7 @@ export default function RootLayout({ children }) {
       >
         <div className="tokyo_tm_all_wrap">
           <ThemeProvider attribute="class">
-            {pathname !== "/" ? <ThemeSwitch /> : ""}
+            <ThemeSwitch />
             {/* End themeSwicher */}
             {children}
             {/* Main next component pageprops */}
