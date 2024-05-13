@@ -1,10 +1,16 @@
+'use client';
+
 import About from "@/components/about";
 import Sidebar from "@/components/sidebar/Sidebar";
+import dynamic from 'next/dynamic'
 
-export const metadata = {
-  title: "About || Tokyo - Personal Portfolio React Nextjs Template",
-};
+
+// Disallowed in client mode
+// export const metadata = {
+//   title: "About || Tokyo - Personal Portfolio React Nextjs Template",
+// };
 const index = ({ params }) => {
+  const Project = dynamic(() => import("@/public/projects/" + params.project + "/project.mdx"));
   return (
     <>
       {/* End page title for seo */}
@@ -19,6 +25,7 @@ const index = ({ params }) => {
             <div data-aos="fade-right" data-aos-duration="1200">            
               <p>Project: {params.project}</p>
               {/* <About /> */}
+              <Project />
             </div>
           </div>
         </div>
