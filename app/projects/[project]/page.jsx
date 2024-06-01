@@ -3,6 +3,7 @@
 import About from "@/components/about";
 import Sidebar from "@/components/sidebar/Sidebar";
 import dynamic from 'next/dynamic'
+// import Project from "@/public/projects/ai-insect-trap/project.mdx";
 
 
 // Disallowed in client mode
@@ -24,6 +25,7 @@ const index = ({ params }) => {
           <div className="tokyo_tm_section">
             <div data-aos="fade-right" data-aos-duration="1200">            
               <p>Project: {params.project}</p>
+              <p>Title: {Project.frontmatter?.title}</p>
               {/* <About /> */}
               <Project />
             </div>

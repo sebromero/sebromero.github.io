@@ -30,6 +30,8 @@
     "react-toastify": "^10.0.4",
     "react-tooltip": "^5.26.3",
     "react-typed": "^2.0.12",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^4.0.0",
     "sass": "^1.71.1",
     "slick-carousel": "^1.8.1"
   }
