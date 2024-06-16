@@ -8,12 +8,12 @@ import { MDXContent } from "@/components/MDXContent";
 import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
 
 async function Project({ id }) {
-  const { serialized, frontmatter } = await getProject(getProjectsPath() + id + '/project.mdx');
+  const { title, date, content } = await getProject(id);
   return (
     <article>
-      <h1>{frontmatter?.title}</h1>
-      <p>{frontmatter?.date}</p>
-      <MDXContent source={serialized} />
+      <h1>{title}</h1>
+      <p>{date}</p>
+      <MDXContent source={content} />
     </article>
   )
 }

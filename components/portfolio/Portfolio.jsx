@@ -12,9 +12,11 @@ import ModalTwo from "./modal/ModalTwo";
 import ImageCard from "@/components/cards/ImageCard";
 import GalleryImageCard from "@/components/cards/GalleryImageCard";
 import DetailsCard from "@/components/cards/DetailsCard";
+// import { getAllProjects } from "@/lib/projects";
+
 // Modal.setAppElement("#__next");
 
-const Portfolio = () => {
+const Portfolio = ({projects}) => {
   // for popup video for youtube
   const [isOpenYoutube, setOpenYoutube] = useState(false);
 
@@ -54,9 +56,11 @@ const Portfolio = () => {
                 data-aos="fade-right"
                 data-aos-duration="1200"
               >
-                <li>
-                  <DetailsCard title="AI Insect Trap" subtitle="How to implement a smart, LoRa-connected insect trap with Arduino." date="2024" href="/projects/ai-insect-trap" image="/projects/AI-Insect-Trap/pictures/open-mv.png" />
-                </li>
+                {
+                  projects && projects.map((project) => {
+                    return <li key={project.slug}><DetailsCard title={project.title} subtitle={project.subtitle} date={project.date_end} href={"/projects/" + project.slug} image={project.title_image}></DetailsCard></li>
+                  })
+                }                
                 <li>
                   <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} />
                 </li>

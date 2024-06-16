@@ -1,5 +1,7 @@
 import Portfolio from "@/components/portfolio/Portfolio";
 import Sidebar from "@/components/sidebar/Sidebar";
+import { getAllProjects } from "@/lib/projects";
+
 export const metadata = {
   title: "Portfolio || Tokyo - Personal Portfolio React Nextjs Template",
 };
@@ -28,7 +30,7 @@ const index = () => {
                 {/* END TOKYO_TM_TITLE */}
 
                 <div className="portfolio_filter">
-                  <Portfolio />
+                  <Portfolio projects={getAllProjects()} />
                 </div>
                 {/* END PROFTOLIO FILTER */}
               </div>
