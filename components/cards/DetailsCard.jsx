@@ -18,9 +18,11 @@ const DetailsCard = (props) => {
                     {/* END TITLE */}
                     
                     <div className="extra">
-                        <p className="date">
+                        <p>
                             {props.subtitle}
-                            <span>{props.date}</span>
+                        </p>
+                        <p className="date">
+                            {props.date}
                         </p>
                     </div>
                     {/* END EXTRA */}

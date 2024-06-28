@@ -5,8 +5,7 @@
 .dark .details-card .details {
     background-color: #323232;
 }
-
-.dark .details-card .details .date {
+.dark .details-card .details .extra{
     color: #bbb;
 }
 
@@ -28,7 +27,8 @@
 
 
 .dark .details-card .details .date {
-    color: #bbb;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: #767676;
 }
 
 // TODO: Remove this block when the website is ready
@@ -107,11 +107,17 @@
 
 .details-card .extra {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: start;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 5px;
+
+    // text-transform: capitalize;
+    font-family: var(--font-montserrat);
+    font-size: 13px;
+    color: #767676;
 }
 
 .details-card .details .title:hover {
@@ -156,11 +162,10 @@
 }
 
 .details-card .details .date {
-    // text-transform: capitalize;
-    font-family: var(--font-montserrat);
-    font-size: 13px;
-    color: #767676;
-    // font-style: italic;
+    margin-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+    color: #bbb;
 }
 
 .details-card:hover .tokyo_tm_read_more .read-more span {
@@ -181,17 +186,4 @@
 .details-card .details .date span {
     position: relative;
     margin-left: 11px;
-}
-
-.details-card .details .date span:before {
-    position: absolute;
-    content: "";
-    margin-top: 1px;
-    top: 50%;
-    transform: translateY(-50%) rotate(15deg);
-    right: 100%;
-    background-color: #939393;
-    width: 1px;
-    height: 9px;
-    margin-right: 5px;
 }
