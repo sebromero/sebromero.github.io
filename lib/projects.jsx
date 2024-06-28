@@ -2,22 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
-import { sort } from '@/data/newsData';
 
 const PROJECTS_PATH = "projects";
-const PROJECTS_ROOT_PATH = 'public/' + PROJECTS_PATH + '/';
-
-function getProjectsPath() {
-    return PROJECTS_ROOT_PATH;
-}
+const PROJECTS_ROOT_PATH = path.join('public', PROJECTS_PATH);
 
 function getAssetPath(projectID){
-    return PROJECTS_PATH + '/' + projectID + "/assets/";
+    // Make path absolute to avoid cascading slashes when using relative links    
+    return path.join("/", PROJECTS_PATH, projectID, "assets");
 }
 
 function getProjectMDXFilePath(projectID){
-    return path.join(getProjectsPath(), projectID, 'project.mdx');
-    // Find MDX file in project folder
+    return path.join(PROJECTS_ROOT_PATH, projectID, 'project.mdx');
 }
 
 function sortProjects(projectsData) {
@@ -36,7 +31,18 @@ function sortProjects(projectsData) {
     return projectsData;
 }
 
-
+/**
+ * 
+ * @returns {Array} An array of objects containing project data.
+ * The objects have the following properties:
+ * - title: The title of the project.
+ * - filter_categories: The categories to filter the project by.
+ * - subtitle: The subtitle of the project.
+ * - date_end: The date the project was completed.
+ * - title_image: The path to the title image of the project.
+ * - slug: The slug of the project.
+ * - link: The path to the project page.
+ */
 export function getAllProjects() {
     let projectsFolders = fs.readdirSync(PROJECTS_ROOT_PATH);
 
@@ -52,16 +58,27 @@ export function getAllProjects() {
         const matterResult = matter(fileContents);
         return {
             title: matterResult.data.title,
+            filter_categories: matterResult.data.filter_categories,
             subtitle : matterResult.data.subtitle,
             date_end: matterResult.data.date_end,
-            title_image: getAssetPath(projectFolder) + matterResult.data.title_image,
+            title_image: path.join(getAssetPath(projectFolder), matterResult.data.title_image),
             slug: projectFolder,
+            link: path.join(PROJECTS_PATH, projectFolder)
         };
     });
 
     return sortProjects(projectsData);
 }
 
+/**
+ * 
+ * @param {Number} projectID 
+ * @returns The project data for the project with the given ID.
+ * The object has the following properties:
+ * - title: The title of the project.
+ * - content: The content of the project.
+ * - filePath: The path to the project MDX file.
+ */
 export async function getProject(projectID) {
     const filepath = getProjectMDXFilePath(projectID);
 

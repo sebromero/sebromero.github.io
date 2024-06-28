@@ -12,11 +12,22 @@ import ModalTwo from "./modal/ModalTwo";
 import ImageCard from "@/components/cards/ImageCard";
 import GalleryImageCard from "@/components/cards/GalleryImageCard";
 import DetailsCard from "@/components/cards/DetailsCard";
-// import { getAllProjects } from "@/lib/projects";
 
 // Modal.setAppElement("#__next");
 
 const Portfolio = ({projects}) => {
+
+  const electronicsProjects = projects.filter(project => project.filter_categories.includes("electronics"));
+  const softwareProjects = projects.filter(project => project.filter_categories.includes("software"));
+  const designProjects = projects.filter(project => project.filter_categories.includes("design"));
+
+  const categoriesData = [
+    {label: "All", data: projects},
+    {label: "Electronics", data: electronicsProjects},
+    {label: "Software", data: softwareProjects},
+    {label: "Design", data: designProjects}
+  ];
+
   // for popup video for youtube
   const [isOpenYoutube, setOpenYoutube] = useState(false);
 
@@ -25,14 +36,10 @@ const Portfolio = ({projects}) => {
 
   // for modal details
   const [isOpenModalOne, setIsOpenModalOne] = useState(false);
-  const [isOpenModalTwo, setIsOpenModalTwo] = useState(false);
 
   // for modal details method
   function toggleModalOne() {
     setIsOpenModalOne(!isOpenModalOne);
-  }
-  function toggleModalTwo() {
-    setIsOpenModalTwo(!isOpenModalTwo);
   }
 
   return (
@@ -41,118 +48,40 @@ const Portfolio = ({projects}) => {
         <Tabs>
           {/* START FILTER TABLIST */}
           <TabList>
-            <Tab>All</Tab>
-            <Tab>Videos</Tab>
-            <Tab>Photography</Tab>
-            <Tab>Details</Tab>
+            {
+              categoriesData.map((category) => {
+                return <Tab key={category.label}>{category.label}</Tab>
+              })
+            }
           </TabList>
           {/* END FILTER TABLIST */}
 
           <div className="list_wrapper">
-            {/* START ALL PORTFOLIO */}
-            <TabPanel>
-              <ul
-                className="portfolio_list"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
-                {
-                  projects && projects.map((project) => {
-                    return <li key={project.slug}><DetailsCard title={project.title} subtitle={project.subtitle} date={project.date_end} href={"/projects/" + project.slug} image={project.title_image}></DetailsCard></li>
-                  })
-                }                
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} />
-                </li>
-                {/* END VIMEO */}
-
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/2.jpg" title="Ashely Flores" subtitle="Youtube" id="youtube" onClick={() => setOpenYoutube(true)} />
-                </li>
-                {/* END YOUTUBE */}
-
-                <li>
-                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/4.jpg" image="/img/portfolio/4.jpg" title="Derek Smith" subtitle="Shot" id="shot" />
-                </li>
-                {/* END SHOT */}
-
-                <li>
-                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/3.jpg" image="/img/portfolio/3.jpg" title="Gloria Jenkins" subtitle="Shot" id="shot2" />
-                </li>
-                {/* END SHOT */}
-
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/6.jpg" title="Selena Gomez" subtitle="Details" id="detail" onClick={toggleModalOne} />
-                </li>
-                {/* END DETAILS */}
-
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/7.jpg" title="Ave Simone" subtitle="Details" id="detail2" onClick={toggleModalTwo} />
-                </li>
-                {/* END DETAILS */}
-              </ul>
-            </TabPanel>
-            {/* END ALL PORTFOLIO */}
-
-            {/* START VIDEOS */}
-            <TabPanel>
-              <ul
-                className="portfolio_list"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} />
-                </li>
-                {/* END VIMEO */}
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/2.jpg" title="Ashely Flores" subtitle="Youtube" id="youtube" onClick={() => setOpenYoutube(true)} />
-                </li>
-                {/* END YOUTUBE */}
-              </ul>
-              {/* END PORTFOLIO LIST */}
-            </TabPanel>
-            {/* END VIDEOS */}
-
-            {/* START PHOTOGRAHY */}
-            <TabPanel>
-              <ul
-                className="portfolio_list"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
-                <li>
-                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/4.jpg" image="/img/portfolio/4.jpg" title="Derek Smith" subtitle="Shot" id="shot" />
-                </li>
-                {/* END SHOT */}
-                <li>
-                  <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/3.jpg" image="/img/portfolio/3.jpg" title="Gloria Jenkins" subtitle="Shot" id="shot2" />
-                </li>
-                {/* END SHOT */}
-              </ul>
-              {/* END PORTFOLIO LIST */}
-            </TabPanel>
-            {/* END PHOTOGRAHY */}
-
-            {/* START PORTFOLIO DETAILS */}
-            <TabPanel>
-              <ul
-                className="portfolio_list"
-                data-aos="fade-right"
-                data-aos-duration="1200"
-              >
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/6.jpg" title="Selena Gomez" subtitle="Details" id="detail" onClick={toggleModalOne} />
-                </li>
-                {/* END DETAILS */}
-                <li>
-                  <ImageCard width={300} height={300} image="/img/portfolio/7.jpg" title="Ave Simone" subtitle="Details" id="detail2" onClick={toggleModalTwo} />
-                </li>
-                {/* END DETAILS */}
-              </ul>
-              {/* END DETAILS GALLERY */}
-            </TabPanel>
-            {/* END PORTFOLIO DETAILS */}
+            {
+              categoriesData.map((category) => {
+                return <TabPanel key={category.label}>
+                  <ul className="portfolio_list" data-aos="fade-right" data-aos-duration="1200">
+                    {
+                      category.data && category.data.map((project) => {
+                        return (
+                          <li key={project.slug}>
+                            <DetailsCard title={project.title} subtitle={project.subtitle} date={project.date_end} href={project.link} image={project.title_image}></DetailsCard>
+                            {/* VIMEO */}
+                            {/* <ImageCard width={300} height={300} image="/img/portfolio/5.jpg" title="Teresa Butler" subtitle="Vimeo" id="vimeo" onClick={() => setOpenVimeo(true)} /> */}
+                            {/* YOUTUBE */}
+                            {/* <ImageCard width={300} height={300} image="/img/portfolio/2.jpg" title="Ashely Flores" subtitle="Youtube" id="youtube" onClick={() => setOpenYoutube(true)} /> */}
+                            {/* SHOT */}
+                            {/* <GalleryImageCard width={300} height={300} sourceWidth={500} sourceHeight={550} thumbnail="/img/portfolio/4.jpg" image="/img/portfolio/4.jpg" title="Derek Smith" subtitle="Shot" id="shot" /> */}
+                            {/* DETAILS */}
+                            {/* <ImageCard width={300} height={300} image="/img/portfolio/6.jpg" title="Selena Gomez" subtitle="Details" id="detail" onClick={toggleModalOne} /> */}
+                          </li>
+                        )
+                      })
+                    }                
+                  </ul>
+                </TabPanel>
+              })
+            }
           </div>
           {/* END LIST WRAPPER */}
         </Tabs>
@@ -201,27 +130,6 @@ const Portfolio = ({projects}) => {
       </Modal>
       {/* END MODAL FOR PORTFOLIO DETAILS */}
 
-      {/* START MODAL FOR PORTFOLIO DETAILS */}
-      <Modal
-        ariaHideApp={false}
-        isOpen={isOpenModalTwo}
-        onRequestClose={toggleModalTwo}
-        contentLabel="My dialog"
-        className="mymodal"
-        overlayClassName="myoverlay"
-        closeTimeoutMS={500}
-      >
-        <div className="tokyo_tm_modalbox_news portfolio_tm_modalbox">
-          <button className="close-modal" onClick={toggleModalTwo}>
-            <img src="/img/svg/cancel.svg" alt="close icon" />
-          </button>
-          {/* END CLOSE ICON */}
-          <ModalTwo />
-          {/* END BOX INNER */}
-        </div>
-        {/* END MODALBOX NEWS */}
-      </Modal>
-      {/* END MODAL FOR PORTFOLIO DETAILS */}
     </>
   );
 };
