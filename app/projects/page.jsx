@@ -3,7 +3,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import { getAllProjects } from "@/lib/projects";
 
 export const metadata = {
-  title: "Portfolio || Tokyo - Personal Portfolio React Nextjs Template",
+  title: "Personal Projects",
 };
 const index = () => {
   return (

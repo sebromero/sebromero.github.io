@@ -47,6 +47,7 @@ const Page = ({ params }) => {
   );
 };
 
+// Allows to generate static pages for all projects
 export async function generateStaticParams() {
   return getAllProjects();
 }

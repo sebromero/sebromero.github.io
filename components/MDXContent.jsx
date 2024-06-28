@@ -1,13 +1,11 @@
 'use client';
- 
-import Image from 'next/image'
 
+// To use MDXRemote it must be wrapped in a client component
+// SEE: https://blog.kfirfitousi.com/posts/web-dev/mdx-nextjs-13
+
+import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote';
  
-// export function MdxContent({ source }) {
-//   return <MDXRemote {...source} />;
-// }
-
 /** Place your custom MDX components here */
 const MdxComponents = {
     /** h1 colored in yellow */
