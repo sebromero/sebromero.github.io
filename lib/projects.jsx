@@ -93,7 +93,11 @@ export async function getProject(projectID) {
     const frontmatter = serialized.frontmatter;
     return {
         title : frontmatter.title,
+        subtitle: frontmatter.subtitle,
+        date_end: frontmatter.date_end,
+        abstract: frontmatter.abstract,
+        title_image: path.join(getAssetPath(projectID), frontmatter.title_image),      
         content : serialized,
-        filePath : filepath        
+        filePath : filepath
     };
 }
