@@ -1,10 +1,11 @@
 import Abstract from "./Abstract";
 import ProjectInfo from "./ProjectInfo"
+import { MDXContent } from "@/components/MDXContent";
 
 import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
 
 const ProjectMain = async ({ id }) => {
-    const { title, subtitle, date_end, abstract, title_image } = await getProject(id);
+    const { title, content, subtitle, date_end, abstract, title_image } = await getProject(id);
     return (
         <>
       <div className="container">
@@ -30,6 +31,11 @@ const ProjectMain = async ({ id }) => {
               <span>Download CV</span>
             </a>
           </div>
+
+          <article>
+            <MDXContent source={content} />
+          </article>
+
         </div>
       </div>
       {/* End .container */}
