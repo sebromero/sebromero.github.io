@@ -49,8 +49,11 @@ const Page = ({ params }) => {
 };
 
 // Allows to generate static pages for all projects
-export async function generateStaticParams() {
-  return getAllProjects();
+async function generateStaticParams() {
+  return getAllProjects().map((project) => {
+    return { id: project.slug }
+  });
 }
 
 export default Page;
+export { generateStaticParams };
