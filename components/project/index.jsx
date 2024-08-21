@@ -5,7 +5,8 @@ import { MDXContent } from "@/components/MDXContent";
 import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
 
 const ProjectMain = async ({ id }) => {
-    const { title, content, subtitle, date_end, abstract, title_image } = await getProject(id);
+    const project = await getProject(id);
+    const { title, content, subtitle, date_end, abstract, title_image } = project;
     return (
         <>
       <div className="container">
@@ -22,7 +23,7 @@ const ProjectMain = async ({ id }) => {
 
           <Abstract title={subtitle} date={date_end} content={abstract} title_image={title_image} />
           <div className="tokyo_tm_short_info">
-            <ProjectInfo />
+            <ProjectInfo project={project} />
           </div>
           {/* End personal info */}
 

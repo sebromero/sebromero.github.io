@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProjectInfo = () => {
+const ProjectInfo = ({ project }) => {
   const personalInfoContent = [
     {
       id: 1,
@@ -8,37 +8,28 @@ const ProjectInfo = () => {
       info: [
         {
           id: 1,
-          name: "Birthday",
-          content: "01.07.1990",
+          name: "Date",
+          content: project.date_end,
         },
         {
           id: 2,
-          name: "Age",
+          name: "Categories",
           content: "32",
         },
         {
           id: 3,
-          name: "Address",
+          name: "Context",
           content: "Ave 11, New York, USA",
         },
         {
           id: 4,
-          name: "Email",
+          name: "Team",
           content: (
             <>
               <a href="mailto:tokyo@gmail.com">tokyo@gmail.com</a>
             </>
           ),
-        },
-        {
-          id: 5,
-          name: "Phone",
-          content: (
-            <>
-              <a href="tel:+77 022 177 05 05">+77 022 177 05 05</a>
-            </>
-          ),
-        },
+        }
       ],
     },
     {
@@ -64,11 +55,6 @@ const ProjectInfo = () => {
           id: 4,
           name: "Interest",
           content: "Playing Football",
-        },
-        {
-          id: 5,
-          name: "Freelance",
-          content: "Available",
         },
       ],
     },
