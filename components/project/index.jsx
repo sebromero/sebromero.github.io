@@ -15,7 +15,7 @@ const ProjectMain = async ({ id }) => {
             <div className="title_flex">
               <div className="left">
                 <span>Project</span>
-                <h3>{title}</h3>
+                <h1>{title}</h1>
               </div>
             </div>
           </div>
@@ -26,12 +26,6 @@ const ProjectMain = async ({ id }) => {
             <ProjectInfo project={project} />
           </div>
           {/* End personal info */}
-
-          <div className="tokyo_tm_button" data-position="left">
-            <a href="/img/cv.pdf" download>
-              <span>Download CV</span>
-            </a>
-          </div>
 
           <article>
             <MDXContent source={content} />
