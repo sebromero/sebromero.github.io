@@ -6,7 +6,7 @@ import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
 
 const ProjectMain = async ({ id }) => {
     const project = await getProject(id);
-    const { title, content, subtitle, date_end, abstract, title_image } = project;
+    const { title, content, subtitle, tags, abstract, title_image } = project;
     return (
         <>
       <div className="container">
@@ -21,7 +21,7 @@ const ProjectMain = async ({ id }) => {
           </div>
           {/* End title */}
 
-          <Abstract title={subtitle} date={date_end} content={abstract} title_image={title_image} />
+          <Abstract title={subtitle} tags={tags} content={abstract} title_image={title_image} />
           <div className="tokyo_tm_short_info">
             <ProjectInfo project={project} />
           </div>

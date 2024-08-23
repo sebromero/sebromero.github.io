@@ -95,6 +95,7 @@ export async function getProject(projectID) {
         title : frontmatter.title,
         subtitle: frontmatter.subtitle,
         date_end: frontmatter.date_end,
+        tags: frontmatter.tags,
         abstract: frontmatter.abstract,
         title_image: path.join(getAssetPath(projectID), frontmatter.title_image),      
         content : serialized,

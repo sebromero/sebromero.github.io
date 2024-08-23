@@ -1,6 +1,6 @@
 import React from "react";
 
-const Abstract = ({title, date, content, title_image}) => {
+const Abstract = ({title, tags, content, title_image}) => {
   return (
     <>
       <div className="top_author_image">
@@ -8,7 +8,13 @@ const Abstract = ({title, date, content, title_image}) => {
       </div>
       <div className="about_title">
         <h2>{title}</h2>
-        <span>{date}</span>
+        {tags && (
+          <ul className="tags">
+            {tags.map((tag) => (
+              <li key={tag}>{tag}</li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className="about_text">{content}</div>
     </>
