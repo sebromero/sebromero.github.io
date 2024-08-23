@@ -9,9 +9,9 @@ import { MDXRemote } from 'next-mdx-remote';
 /** Place your custom MDX components here */
 const MdxComponents = {
     /** h1 colored in yellow */
-    h1: (props) => (
-      <h1 style={{ color: '#FFF676', fontSize: '5em' }} {...props} />
-    ),
+    // h1: (props) => (
+    //   <h1 style={{ color: '#FFF676', fontSize: '5em' }} {...props} />
+    // ),
     img: (props) => (
       <Image
         sizes="100vw"
