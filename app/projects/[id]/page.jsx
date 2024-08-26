@@ -3,7 +3,7 @@
 // SEE: https://blog.kfirfitousi.com/posts/web-dev/mdx-nextjs-13
 
 import Sidebar from "@/components/sidebar/Sidebar";
-import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
+import { getAllProjects } from "@/lib/projects"
 import Project from "@/components/project";
 
 // Disallowed in client mode
@@ -11,7 +11,6 @@ import Project from "@/components/project";
 //   title: "About || Tokyo - Personal Portfolio React Nextjs Template",
 // };
 const Page = ({ params }) => {
-  // const Project = dynamic(() => import("@/public/projects/" + params.project + "/project.mdx"));
   return (
     <>
       {/* End page title for seo */}
