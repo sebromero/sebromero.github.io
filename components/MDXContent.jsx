@@ -5,13 +5,19 @@
 
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote';
+import 'photoswipe/dist/photoswipe.css' // Required for image gallery
+import { Gallery, Item } from "react-photoswipe-gallery";
  
 /** Place your custom MDX components here */
+
+// Fullscreen gallery options
+const galleryOptions = {
+  // padding: { top: 20, bottom: 48, left: 100, right: 100 },
+};
+
+const captionStyle = "font-size: 1rem; padding: 8px; border-radius: 4px; background-color: rgba(0,0,0, 0.5)";
+
 const MdxComponents = {
-    /** h1 colored in yellow */
-    // h1: (props) => (
-    //   <h1 style={{ color: '#FFF676', fontSize: '5em' }} {...props} />
-    // ),
     img: (props) => (
       <Image
         sizes="100vw"
@@ -32,6 +38,39 @@ const MdxComponents = {
         }}
         {...props}
       />
+    ),
+    Gallery: (props) => (
+      <Gallery options={galleryOptions} withCaption>
+        <div
+          style={{
+            margin: '1.5em 0',
+            display: 'grid',
+            gridAutoColumns: 'calc(33.3%)',
+            gridAutoFlow: 'column dense',
+            gridGap: 12,
+          }}
+        >
+        {props.children}
+        </div>
+      </Gallery>
+    ),
+    Item: (props) => (
+      <Item
+        original={props.original}
+        thumbnail={props.thumbnail}
+        width={props.width}
+        height={props.height}
+        caption={props.caption ? "<span style='" + captionStyle + "'>" + props.caption + "</span>" : null}
+      >
+        {({ ref, open }) => (
+          <img
+            style={{ cursor: 'pointer', objectFit: 'cover', width: '100%', maxHeight: '100%'}}            
+            src={props.thumbnail ? props.thumbnail : props.original}
+            ref={ref}
+            onClick={open}
+          />
+        )}
+      </Item>
     ),
   };
    

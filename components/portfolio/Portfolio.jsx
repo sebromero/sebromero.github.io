@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Gallery } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
+
+// Required for image gallery
+// import "photoswipe/dist/photoswipe.css";
 import "react-tooltip/dist/react-tooltip.css";
 import ModalVideo from "react-modal-video";
 import Modal from "react-modal";
