@@ -94,9 +94,13 @@ export async function getProject(projectID) {
     return {
         title : frontmatter.title,
         subtitle: frontmatter.subtitle,
+        date_start: frontmatter.date_start,
         date_end: frontmatter.date_end,
         tags: frontmatter.tags,
         abstract: frontmatter.abstract,
+        team: frontmatter.team,
+        source_code: frontmatter.source_code,
+        context: frontmatter.context,
         title_image: path.join(getAssetPath(projectID), frontmatter.title_image),      
         content : serialized,
         filePath : filepath
