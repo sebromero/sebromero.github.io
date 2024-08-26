@@ -100,6 +100,7 @@ export async function getProject(projectID) {
         abstract: frontmatter.abstract,
         team: frontmatter.team,
         source_code: frontmatter.source_code,
+        assets: frontmatter.assets,
         context: frontmatter.context,
         title_image: path.join(getAssetPath(projectID), frontmatter.title_image),      
         content : serialized,

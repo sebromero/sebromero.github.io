@@ -16,10 +16,18 @@ const ProjectInfo = ({ project }) => {
       value: team,
     },
     {
-      name: "🧑‍💻 Source Code",
+      name: "🧑‍💻 Code",
       value: source_code && (
           <>
-            <a href={source_code} target="_self" rel="noopener noreferrer">Open Repository</a>
+            <a href={source_code} target="_self" rel="noopener noreferrer">View</a>
+          </>
+      ),
+    },
+    {
+      name: "📦 Assets",
+      value: project.assets && (
+          <>
+            <a href={project.assets} target="_self" rel="noopener noreferrer">Download</a>
           </>
       ),
     }
