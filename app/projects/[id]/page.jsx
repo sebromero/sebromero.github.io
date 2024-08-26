@@ -2,22 +2,9 @@
 
 // SEE: https://blog.kfirfitousi.com/posts/web-dev/mdx-nextjs-13
 
-import About from "@/components/about";
 import Sidebar from "@/components/sidebar/Sidebar";
-import { MDXContent } from "@/components/MDXContent";
 import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
 import Project from "@/components/project";
-
-// async function Project({ id }) {
-//   const { title, date, content } = await getProject(id);
-//   return (
-//     <article>
-//       <h1>{title}</h1>
-//       <p>{date}</p>
-//       <MDXContent source={content} />
-//     </article>
-//   )
-// }
 
 // Disallowed in client mode
 // export const metadata = {
