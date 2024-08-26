@@ -39,6 +39,23 @@ article {
 
 /* Global Stlyes */
 
+ul.tags {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;    
+    gap: 0.5rem; // Space between tags
+    padding: 0;
+    margin-top: 1rem;
+    
+    li {
+        border-radius: 20px;
+        background-color: rgb(76,167,114);
+        color: white;
+        padding: 0 16px;
+    }
+}
+
+
 .dark a {
     color: $primary-color-dark;
 }
