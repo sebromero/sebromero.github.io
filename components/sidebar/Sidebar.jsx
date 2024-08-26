@@ -10,6 +10,10 @@ import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
   const router = usePathname();
+  
+  // Get only first path component including the slash
+  const activeRoute = router.split("/").slice(0, 2).join("/");
+  
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -68,7 +72,7 @@ const Sidebar = () => {
                 <li key={item.id} onClick={handleClick}>
                   <Link
                     className={`${
-                      isActiveLink(item.routePath, router) ? "active " : ""
+                      isActiveLink(item.routePath, activeRoute) ? "active " : ""
                     }`}
                     href={item.routePath}
                   >
