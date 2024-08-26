@@ -2,7 +2,7 @@ import Abstract from "./Abstract";
 import ProjectInfo from "./ProjectInfo"
 import { MDXContent } from "@/components/MDXContent";
 
-import { getAllProjects, getProjectsPath, getProject } from "@/lib/projects"
+import { getProject } from "@/lib/projects"
 
 const ProjectMain = async ({ id }) => {
     const project = await getProject(id);
