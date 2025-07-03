@@ -1,4 +1,4 @@
-import Portfolio from "@/components/portfolio/Portfolio";
+import ProjectList from "@/components/project/ProjectList";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { getAllProjects } from "@/lib/projects";
 
@@ -30,7 +30,7 @@ const index = () => {
                 {/* END TOKYO_TM_TITLE */}
 
                 <div className="portfolio_filter">
-                  <Portfolio projects={getAllProjects()} />
+                  <ProjectList projects={getAllProjects()} />
                 </div>
                 {/* END PROFTOLIO FILTER */}
               </div>

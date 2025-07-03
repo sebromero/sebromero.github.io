@@ -17,7 +17,7 @@ import DetailsCard from "@/components/cards/DetailsCard";
 
 // Modal.setAppElement("#__next");
 
-const Portfolio = ({projects}) => {
+const ProjectList = ({projects}) => {
 
   const electronicsProjects = projects.filter(project => project.filter_categories.includes("electronics"));
   const softwareProjects = projects.filter(project => project.filter_categories.includes("software"));
@@ -136,4 +136,4 @@ const Portfolio = ({projects}) => {
   );
 };
 
-export default Portfolio;
+export default ProjectList;
