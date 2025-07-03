@@ -1,0 +1,63 @@
+---
+filter_categories : ["electronics"]
+title : "Full Moon Lamp"
+subtitle : "An interactivce lamp for your smart home"
+abstract : "The Full Moon Lamp is an interactive lamp that can be integrated into your matter-operated smart home. It can be used with systems like Apple Home, Google Home and Alexa Smart Home."
+date_start : "05/2024"
+date_end : "05/2024"
+title_image : "IMG_8494_hero.jpg"
+context : "Conference Demo"
+tags : ["matter","iot","smart-home", "3D-printing"]
+source_code : [https://github.com/sebromero/full-moon-lamp]
+assets : [https://github.com/sebromero/full-moon-lamp/assets]
+---
+
+# Starting Point
+
+For the Hardware Pioneers Max 2024 conference in London, I was asked to create a demo that 
+shows off the Arduino Nano Matter board's Smart Home capabilities. The board had been released just a few weeks before the conference took place.
+I decided to go for something that is easy to spot from a distance and easy to understand by the audience.
+Often the people at such conferences like to take a quick look at the source code.
+The main value proposition of Arduino is ease of use, hence it was important to demonstrate how little code it takes to get this project up and running.
+
+# Concept
+
+For the mentioned reasons I dediced to go with an interactive lamp that can be controlled through a voice assistant.
+The lamp can be turned on or off and the color can be changed, all through voice or by using the corresponding smart home app.
+
+# Build
+
+For the initial version I created a shield for the Nano Matter that hosts an ATTiny85 MCU. The ATTiny communicates with the Neopixel ring mounted on the top of the lamp's base.
+I did this because the NeoPixel ring takes 5V but the Nano Matter operates at 3.3V. The ATTiny85 however can run at 5V. 
+I could have used a level shifter but the only one I had at hand was the BSS138 based [Sparkfun module](https://www.sparkfun.com/products/12009) that is too slow for the 800 kHz required by the WS2812b Neopixels.
+So the idea was to use a co-processor that controls the LEDs.
+
+The communication between the Nano Matter and the ATTiny was realized over UART.
+The ATTiny doesn't have a hardware UART, but the Arduino core already features a bit-banged Software Serial interface.
+
+The custom protocol just features one simple string based command: "Red,Green,Blue,Brightness"
+E.g. sending 255,0,0,128 would make the LEDs go red at 50% brightness (128 out of 255).
+
+
+
+References: https://www.printables.com/model/616705-moon-lamp-led-base
+https://www.printables.com/model/356783-moon-lamp
+
+Print at 0.675.
+Socket was designed for 50%, I increased it by 135% so that the NeoPixel Ring fits.
+
+<Gallery>
+    <Item
+      original="/projects/matter-lamp/assets/IMG_8494_hero.jpg"
+      width="2048"
+      height="1536"
+    >
+    </Item>
+    <Item
+      original="/projects/matter-lamp/assets/hardware-pioneers-max-24.jpg"
+      width="3748"
+      height="2811"
+      caption="Lamp exhibited at Hardware Pioneers Max 2024"
+    >
+    </Item>
+</Gallery>
