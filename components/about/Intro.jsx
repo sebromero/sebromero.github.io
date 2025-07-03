@@ -2,7 +2,7 @@ import React from "react";
 
 const Intro = () => {
   const introContent = {
-    image: "/img/slider/1.jpg",
+    image: "/img/about/Romero-Sebastian-2024-129.jpg",
     name: "Adriano Smith",
     designation: "Web Developer",
     text: (
