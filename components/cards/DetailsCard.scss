@@ -1,10 +1,8 @@
 .dark .details-card {
     box-shadow: 0 0 15px #252525;
-}
-
-.dark .details-card .details {
     background-color: #323232;
 }
+
 .dark .details-card .details .extra{
     color: #bbb;
 }
@@ -42,7 +40,7 @@
 
 .details-card {
     width: 100%;
-    height: auto;
+    height: 100%;
     clear: both;
     float: left;
     position: relative;
