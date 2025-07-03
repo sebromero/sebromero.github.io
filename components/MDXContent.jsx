@@ -7,6 +7,8 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote';
 import 'photoswipe/dist/photoswipe.css' // Required for image gallery
 import { Gallery, Item } from "react-photoswipe-gallery";
+// Import SCSS
+import './MDXContent.scss';
  
 /** Place your custom MDX components here */
 
@@ -28,28 +30,9 @@ const MdxComponents = {
         {...props}
       />
     ),
-    /** Card component */
-    Card: (props) => (
-      <div
-        style={{
-          background: '#333',
-          borderRadius: '0.25rem',
-          padding: '0.5rem 1rem',
-        }}
-        {...props}
-      />
-    ),
     Gallery: (props) => (
       <Gallery options={galleryOptions} withCaption>
-        <div
-          style={{
-            margin: '1.5em 0',
-            display: 'grid',
-            gridAutoColumns: 'calc(33.3%)',
-            gridAutoFlow: 'column dense',
-            gridGap: 12,
-          }}
-        >
+        <div className='gallery'>
         {props.children}
         </div>
       </Gallery>

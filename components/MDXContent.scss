@@ -1,0 +1,22 @@
+
+.gallery {
+    margin: 1.5em 0;
+    display: grid;
+    grid-auto-columns: calc(33.3%);
+    grid-auto-flow: column dense;
+    gap: 12px;
+}
+
+// On small screens, show 2 image per row
+@media (max-width: 768px) {
+    .gallery {
+        grid-auto-columns: calc(50%);
+    }
+}
+
+// On extra small screens, show 1 image per row
+@media (max-width: 480px) {
+    .gallery {
+        grid-auto-columns: calc(100%);
+    }
+}
