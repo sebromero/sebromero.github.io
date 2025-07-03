@@ -23,7 +23,6 @@ const Page = ({ params }) => {
         <div className="rightpart_in">
           <div className="tokyo_tm_section">
             <div data-aos="fade-right" data-aos-duration="1200">            
-              {/* <About /> */}
               <Project id={params.id} />
             </div>
           </div>
