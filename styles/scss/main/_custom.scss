@@ -125,3 +125,9 @@ article {
     color: #000;
     background-color: rgba(0, 0, 0, 0.05);
 }
+
+/* Overrides for Social Icons */
+
+.dark .social, .social {
+    margin-left: 0; // Align icons to content above
+}
