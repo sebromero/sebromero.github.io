@@ -74,11 +74,7 @@ jobs:
       - name: Build with Next.js
         env:
           PREFIX_PATHS: 'true'
-        run: |
-          ${{ steps.detect-package-manager.outputs.manager }} run build
-          ls -la
-          echo "Contents of ./out:"
-          ls -la ./out
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -7,7 +7,7 @@ const nextConfig = {
     
     // See: https://stackoverflow.com/questions/70500084/how-to-export-static-images-on-nextjs
     images: {
-        unoptimized: true,
+        unoptimized: false,
     }    
 };
 
